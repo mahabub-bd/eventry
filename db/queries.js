@@ -24,4 +24,3 @@ async function createUser(user) {
 }
 
 export { createUser, getAllEvents, getEventById };
-0;
