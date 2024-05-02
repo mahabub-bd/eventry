@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import SignInOut from "./auth/SignInOut";
 
 export default function Navbar() {
   return (
@@ -10,7 +13,7 @@ export default function Navbar() {
             <Image
               src="./assets/logo.svg"
               alt="Eventry"
-              className="h-[45px]"
+              className="h-[45px] w-[145px]"
               width={135}
               height={135}
             />
@@ -19,7 +22,7 @@ export default function Navbar() {
 
         <ul className="flex gap-4 text-[#9C9C9C]">
           <li>
-            <Link href="/login">Login</Link>
+            <SignInOut />
           </li>
 
           <li>About</li>
