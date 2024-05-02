@@ -2,8 +2,10 @@ import EventDetails from "@/components/details/EventDetails";
 import EventVenue from "@/components/details/EventVenue";
 import HeroSection from "@/components/details/HeroSection";
 import { getEventById } from "@/db/queries";
+import { dbConncect } from "@/services/mongo";
 
 export default async function EventDetailsPage({ params: { id } }) {
+  await dbConncect();
   const eventInfo = await getEventById(id);
 
   return (

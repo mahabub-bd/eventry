@@ -1,9 +1,11 @@
+import { dbConncect } from "@/services/mongo";
 import Image from "next/image";
 import Link from "next/link";
 import ActionButtons from "../ActionButtons";
+import EventStats from "../EventStats";
 
-export default function EventCard({ event }) {
-  console.log(event);
+export default async function EventCard({ event }) {
+  await dbConncect();
   return (
     <div className="overflow-hidden rounded-md bg-[#242526]">
       <Image
@@ -19,11 +21,7 @@ export default function EventCard({ event }) {
           {event?.name}
         </Link>
         <p className="text-[#9C9C9C] text-sm mt-1">{event?.location}</p>
-        <div className="text-[#737373] text-sm mt-1">
-          <span>1k Interested</span>
-          <span>|</span>
-          <span>40K Going</span>
-        </div>
+        <EventStats event={event} />
 
         <ActionButtons />
       </div>
