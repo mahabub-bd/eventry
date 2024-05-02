@@ -1,9 +1,7 @@
 import { getAllEvents } from "@/db/queries";
-import { dbConncect } from "@/services/mongo";
 import EventCard from "./EventCard";
 
 const EventList = async () => {
-  await dbConncect();
   const allEvents = await getAllEvents();
 
   return (

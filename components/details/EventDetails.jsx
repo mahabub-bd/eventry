@@ -6,8 +6,8 @@ export default function EventDetails({ eventInfo }) {
         <div className="my-2 text-[#AEAEAE] space-y-4 prose lg:prose-lg max-w-none">
           <p className="">{eventInfo?.details}</p>
           <ul>
-            {eventInfo?.swags.length !== 0 &&
-              eventInfo?.swags.map((swag, index) => (
+            {eventInfo?.swags?.length !== 0 &&
+              eventInfo?.swags?.map((swag, index) => (
                 <li key={index}>{swag}</li>
               ))}
           </ul>

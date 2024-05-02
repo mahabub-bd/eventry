@@ -1,4 +1,5 @@
 import { eventModel } from "@/models/event-models";
+import { userModel } from "@/models/user-models";
 import { dbConncect } from "@/services/mongo";
 import {
   replaceMongoIdInArray,
@@ -17,4 +18,10 @@ async function getEventById(eventId) {
   return replaceMongoIdInObject(event);
 }
 
-export { getAllEvents, getEventById };
+async function createUser(user) {
+  await dbConncect();
+  return await userModel.create(user);
+}
+
+export { createUser, getAllEvents, getEventById };
+0;
