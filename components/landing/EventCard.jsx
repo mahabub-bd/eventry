@@ -1,11 +1,9 @@
-import { dbConncect } from "@/services/mongo";
 import Image from "next/image";
 import Link from "next/link";
 import ActionButtons from "../ActionButtons";
 import EventStats from "../EventStats";
 
 export default async function EventCard({ event }) {
-  await dbConncect();
   return (
     <div className="overflow-hidden rounded-md bg-[#242526]">
       <Image
